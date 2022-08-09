@@ -5,8 +5,7 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <>
-      {/* <div classNameName="container"> */}
-        <nav className="navbar navbar-expand-lg bg-light">
+        <nav className="navbar navbar-expand-lg bg-light ">
           <div className="container-fluid ">
             <Nav.Link as={Link} to={"/"} className="navbar-brand ">
               Navbar
@@ -43,15 +42,14 @@ const Navbar = () => {
                 </li>
 
                 <li className="nav-item">
-                  <Nav.Link as={Link} to={"/form"}>
-                    Form
+                  <Nav.Link as={Link} to={"/logout"}>
+                    Logout
                   </Nav.Link>
                 </li>
               </ul>
             </div>
           </div>
         </nav>
-      {/* </div> */}
     </>
   );
 };

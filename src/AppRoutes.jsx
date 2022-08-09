@@ -7,7 +7,7 @@ import FormPage from './components/Form/FormPage';
 
 
 
-function AppRoutes() {
+const AppRoutes = () => {
   return (
     <>
     <Routes>
