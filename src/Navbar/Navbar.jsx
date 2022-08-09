@@ -42,6 +42,12 @@ const Navbar = () => {
                 </li>
 
                 <li className="nav-item">
+                  <Nav.Link as={Link} to={"/list"}>
+                    View Data
+                  </Nav.Link>
+                </li>
+
+                <li className="nav-item">
                   <Nav.Link as={Link} to={"/logout"}>
                     Logout
                   </Nav.Link>

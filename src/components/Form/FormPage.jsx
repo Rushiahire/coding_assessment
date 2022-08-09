@@ -7,13 +7,16 @@ const FormPage = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const todoList = useSelector((state) => {
-    return state.addUserReducer;
-  });
 
   const [data, setData] = useState({
-    email: "",
-    password: "",
+    company:"",
+    name:"",
+    email:"",
+    gender: "",
+    address:"",
+    mobile:"",
+    bank:"",
+    type:"",
   });
 
   const onHandleInput = (event) => {
@@ -29,7 +32,7 @@ const FormPage = () => {
     event.preventDefault();
     // console.log(data)
     dispatch(AddNewUserAction(data), setData(""));
-    navigate("/");
+    // navigate("/");
   };
 
   return (
@@ -45,26 +48,17 @@ const FormPage = () => {
           <select
             class="form-select"
             aria-label="Default select example"
-            value={data.password}
+            id="company"
+            name="company"
+            value={data.company}
             onChange={onHandleInput}
           >
             <option selected>represents company</option>
-            <option value="1">8848 Digital LLP</option>
-            <option value="2">Wayne Enterprises</option>
-            <option value="3">Showbiz Pizza Place</option>
-            <option value="4">The Lawn Guru</option>
+            <option >8848 Digital LLP</option>
+            <option >Wayne Enterprises</option>
+            <option >Showbiz Pizza Place</option>
+            <option >The Lawn Guru</option>
           </select>
-
-          {/* <input
-            type="select"
-            className="form-control"
-            id="company"
-            name="company"
-            required={true}
-            autoComplete='off'
-            // value={data.password}
-            onChange={onHandleInput}
-          /> */}
         </div>
 
         <div className="mb-3">
@@ -76,12 +70,14 @@ const FormPage = () => {
             className="form-control"
             id="name"
             name="name"
-            required={true}
+            // required={true}
             aria-describedby="emailHelp"
             value={data.name}
             onChange={onHandleInput}
           />
         </div>
+
+
         <div className="mb-3">
           <label for="email" className="form-label">
             Email
@@ -91,7 +87,7 @@ const FormPage = () => {
             className="form-control"
             id="email"
             name="email"
-            required={true}
+            // required={true}
             value={data.email}
             onChange={onHandleInput}
           />
@@ -99,6 +95,7 @@ const FormPage = () => {
         <div id="emailHelp" className="form-text">
           We'll never share your email with anyone else.
         </div>
+
 
         <div className="mb-3">
           <label for="company" className="form-label">
@@ -108,14 +105,17 @@ const FormPage = () => {
           <select
             class="form-select"
             aria-label="Default select example"
-            value={data.password}
+            id="gender"
+            name="gender"
+            value={data.gender}
             onChange={onHandleInput}
           >
             <option selected>gender</option>
-            <option value="1">Male</option>
-            <option value="2">Female</option>
+            <option >Male</option>
+            <option >Female</option>
           </select>
         </div>
+
 
         <div className="mb-3">
           <label for="exampleInputEmail1" className="form-label">
@@ -126,7 +126,7 @@ const FormPage = () => {
             className="form-control"
             id="address"
             name="address"
-            required={true}
+            // required={true}
             autoComplete="off"
             aria-describedby="address"
             value={data.address}
@@ -143,7 +143,7 @@ const FormPage = () => {
             className="form-control"
             id="mobile"
             name="mobile"
-            required={true}
+            // required={true}
             autoComplete="off"
             aria-describedby="address"
             value={data.mobile}
@@ -159,15 +159,17 @@ const FormPage = () => {
           <select
             class="form-select"
             aria-label="Default select example"
-            value={data.password}
+            id="bank"
+            name="bank"
+            value={data.bank}
             onChange={onHandleInput}
           >
             <option selected>bank</option>
-            <option value="1">Goldman Sachs</option>
-            <option value="2">Citigroup Inc</option>
-            <option value="3">Wells Fargo</option>
-            <option value="4">Bank of America</option>
-            <option value="5">HDFC</option>
+            <option >Goldman Sachs</option>
+            <option >Citigroup Inc</option>
+            <option >Wells Fargo</option>
+            <option >Bank of America</option>
+            <option >HDFC</option>
           </select>
         </div>
 
@@ -179,12 +181,14 @@ const FormPage = () => {
           <select
             class="form-select"
             aria-label="Default select example"
-            value={data.password}
+            id="type"
+            name="type"
+            value={data.type}
             onChange={onHandleInput}
           >
             <option selected>Customer Type</option>
-            <option value="1">Company</option>
-            <option value="2">Individual</option>
+            <option >Company</option>
+            <option >Individual</option>
           </select>
         </div>
 
@@ -196,14 +200,16 @@ const FormPage = () => {
           <select
             class="form-select"
             aria-label="Default select example"
-            value={data.password}
+            id="territory"
+            name="territory"
+            value={data.territory}
             onChange={onHandleInput}
           >
             <option selected>territory</option>
-            <option value="1">East</option>
-            <option value="2">West</option>
-            <option value="2">North</option>
-            <option value="2">South</option>
+            <option >East</option>
+            <option >West</option>
+            <option >North</option>
+            <option >South</option>
           </select>
         </div>
 
@@ -212,24 +218,7 @@ const FormPage = () => {
         </button>
       </form>
 
-      <div>
-        <ol>
-          {todoList.length > 0 ? (
-            <>
-              {todoList.map((value, index) => {
-                return (
-                  <>
-                    <li key={index}>
-                      <h3>{value.email}</h3>
-                      <h4>{value.password}</h4>
-                    </li>
-                  </>
-                );
-              })}
-            </>
-          ) : null}
-        </ol>
-      </div>
+      
     </>
   );
 };
