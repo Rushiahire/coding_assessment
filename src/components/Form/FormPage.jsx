@@ -32,7 +32,7 @@ const FormPage = () => {
     event.preventDefault();
     // console.log(data)
     dispatch(AddNewUserAction(data), setData(""));
-    // navigate("/");
+    navigate("/list");
   };
 
   return (
