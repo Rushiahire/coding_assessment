@@ -50,6 +50,8 @@ const FormPage = () => {
             aria-label="Default select example"
             id="company"
             name="company"
+            required={true}
+            autoComplete="off"
             value={data.company}
             onChange={onHandleInput}
           >
@@ -70,7 +72,8 @@ const FormPage = () => {
             className="form-control"
             id="name"
             name="name"
-            // required={true}
+            required={true}
+            autoComplete="off"
             aria-describedby="emailHelp"
             value={data.name}
             onChange={onHandleInput}
@@ -87,7 +90,8 @@ const FormPage = () => {
             className="form-control"
             id="email"
             name="email"
-            // required={true}
+            required={true}
+            autoComplete="off"
             value={data.email}
             onChange={onHandleInput}
           />
@@ -107,6 +111,8 @@ const FormPage = () => {
             aria-label="Default select example"
             id="gender"
             name="gender"
+            required={true}
+            autoComplete="off"
             value={data.gender}
             onChange={onHandleInput}
           >
@@ -126,7 +132,7 @@ const FormPage = () => {
             className="form-control"
             id="address"
             name="address"
-            // required={true}
+            required={true}
             autoComplete="off"
             aria-describedby="address"
             value={data.address}
@@ -143,7 +149,7 @@ const FormPage = () => {
             className="form-control"
             id="mobile"
             name="mobile"
-            // required={true}
+            required={true}
             autoComplete="off"
             aria-describedby="address"
             value={data.mobile}
@@ -161,6 +167,8 @@ const FormPage = () => {
             aria-label="Default select example"
             id="bank"
             name="bank"
+            required={true}
+            autoComplete="off"
             value={data.bank}
             onChange={onHandleInput}
           >
@@ -183,6 +191,8 @@ const FormPage = () => {
             aria-label="Default select example"
             id="type"
             name="type"
+            required={true}
+            autoComplete="off"
             value={data.type}
             onChange={onHandleInput}
           >
@@ -202,6 +212,8 @@ const FormPage = () => {
             aria-label="Default select example"
             id="territory"
             name="territory"
+            required={true}
+            autoComplete="off"
             value={data.territory}
             onChange={onHandleInput}
           >
@@ -213,7 +225,7 @@ const FormPage = () => {
           </select>
         </div>
 
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className="btn btn-primary my-4">
           Save
         </button>
       </form>

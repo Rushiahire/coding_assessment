@@ -62,7 +62,7 @@ const firebaseConfig = {
       })
       .catch((error) => {
         // console.log("login error");
-        alert("Something went wrong")
+        alert("User not found")
         window.location.reload()
         // ..
       });
