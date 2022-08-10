@@ -2,8 +2,12 @@ import React from "react";
 import { Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { logoutUser } from "../Auth/FirebaseConfig";
+import { useNavigate } from "react-router-dom";
+
 
 const Navbar = () => {
+
+  const navigate = useNavigate();
   var idToken = window.localStorage.getItem("idToken");
   var isUserLogin = false;
 
@@ -40,27 +44,31 @@ const Navbar = () => {
                 </Nav.Link>
               </li>
 
-              <li className="nav-item">
-                <Nav.Link as={Link} to={"/form"}>
-                  Form
-                </Nav.Link>
-              </li>
-
-              <li className="nav-item">
-                <Nav.Link as={Link} to={"/list"}>
-                  View Data
-                </Nav.Link>
-              </li>
-
-              <li className="nav-item">
+              {/* <li className="nav-item"> */}
                 {isUserLogin ? (
-                  <button onClick={logoutUser}>Logout</button>
+                  
+                  <>
+                    <li className="nav-item">
+                      <Nav.Link as={Link} to={"/form"}>
+                        Form
+                      </Nav.Link>
+                    </li>
+
+                    <li className="nav-item">
+                      <Nav.Link as={Link} to={"/list"}>
+                        View Data
+                      </Nav.Link>
+                    </li>
+                  <li className="nav-item">  <button onClick={logoutUser} id="logout_button" className="btn btn-info w-20">
+                      Logout
+                    </button></li>
+                  </>
                 ) : (
                   <Nav.Link as={Link} to={"/login"}>
                     Login
                   </Nav.Link>
                 )}
-              </li>
+              {/* </li> */}
             </ul>
           </div>
         </div>

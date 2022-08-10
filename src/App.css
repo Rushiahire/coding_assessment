@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -34,5 +34,24 @@
   }
   to {
     transform: rotate(360deg);
+  }
+} */
+
+
+#logout_button , #login_button {
+  margin-left: 850px;
+  
+}
+
+@media only screen and (max-width: 1000px){
+  #logout_button {
+    margin-left: 100px;
+  }
+}
+
+
+@media only screen and (max-width: 980px){
+  #logout_button {
+    margin-left: 0;
   }
 }
